@@ -1,0 +1,144 @@
+
+---+ Notes
+
+   * On open, show the following warnings/questions.
+      * If some fonts were skipped: warning.
+
+   * Allow to load/save FNT files.
+
+   * TODO: Decide how to represent FNT's FaceName and Copyright (simple/advanced).
+
+   * "Save as..." button for FONs.
+
+   * FNT.dfMaxWidth:
+     <verbose>
+       if (Ord(FFirstChar) >= Ord('X')) and (Ord(FFirstChar) + RasterCharsCount > Ord('X')) then
+         dfAvgWidth := RasterChars[Ord('X') - Ord(FFirstChar)].Width
+       else
+         dfAvgWidth := RasterChars[0].Width;
+     </verbose>
+
+   * TODO: Decide how to make multi-language GUI support.
+
+
+
+---+ FON properties
+
+   * Real:
+      * CompanyName
+      * LegalCopyright
+      * FileVersionNumber
+
+   * Extra:
+      * FaceName
+
+   * Advanced auto:
+      * ModuleName           = 'FonEd'
+      * Description          = FONTRES 100,<HorizRes>,<VertRes>: <FaceName> <Points>,...,<Points> (VGA|8514)
+      * ProductVersionNumber = FileVersionNumber as string
+      * FileDescription      = VGA (640x480) | 8514 (1024x768) <FaceName> Font
+      * FileVersion          = FileVersionNumber as string
+      * InternalName         = <FaceName> Font <Points>,...,<Points> (VGA|8514) - <CharSet name>
+      * OriginalFileName     = Generated when saving
+      * ProductName          = <FaceName> Font
+      * ProductVersion       = FileVersionNumber as string
+      * LanguageCode         = If only ASCII in version info then 1033 otherwise current OS setting
+      * CharSetCode          = If only ASCII in version info then 1252 otherwise current OS setting
+
+
+---+ FNT Properties
+
+   * Real:
+      * Italics
+      * Family
+      * FixedPitch
+
+   * Constrained:
+      * Weight      = 400, 800
+      * CharSet     = {Enum}
+      * Ascent      = IntLeading+1..Height
+      * IntLeading  = 0..Ascent-1
+      * VertRes     = 96 | 120
+      * HorizRes    = 96 | 120
+      * PixWidth    = If all chars are of the same width then this width else 0
+
+   * Advanced fixed:
+      * ExtLeading  = 0
+      * Underline   = False
+      * StrikeOut   = False
+      * BreakChar   = #0
+
+   * Advanced auto:
+      * Points      = Height / VertRez * 72
+      * AvgWidth    = Width of 'X' if it is present in the font, otherwise average of all char widths
+      * MaxWidth    = Maximum of all char widths
+      * DefaultChar = '`' if it is present, otherwise the last char
+
+   * Global:
+      * FaceName    = Taken from the FON's FaceName extra property
+      * Copyright   = Taken from the FON's LegalCopyright property
+
+
+
+---+ IDEAS
+
+   * In case of multiple faces, the "<FaceName> Font" transforms to "<FaceName>, ..., <FaceName> Fonts".
+
+   * In "Advanced" modal dialog for "auto" properties, the two options are suggested:
+      * "Fixed value" -- just enter a fixed value.
+      * "Auto" -- in this case the current auto-computed value is shown together with the computing formula
+         explanations.
+
+   * Those constrained values which constraints depend on other values are auto-corrected when that values change.
+
+   * If the constrained property has the manually entered value, it is shown in a gray read-only field,
+     and is painted in red in case the value violates contraints.
+
+   * The possibility to export bitmap with or without ruler is needed. The latter should produce a warning in case of
+     proportional font.
+
+   * On bitmap import, the ruler should be auto-detected. If it is not, then the font should be considered to be
+     mono-spaced, and if the width cannot be determined (bmp_witdh/32 is not an integer), a fatal error is produced.
+
+   * Show hint in preview window: a char code and a glyph. Click scrolls an editor to this char in the middle.
+
+   * Clipboard window shows a frame corresponding to current char under mouse. The clipboard image may be
+     moved (scrolled) using the mouse (may be not obvious) or the buttons.
+
+   * The "Chars -> Manage" allows to delete and insert chars as well as set first char code.
+
+
+---+ Edit operations
+
+   * Add chars to the beginning (correcting FirstChar) or to the end.
+   * Delete chars at the beginning (correcting FirstChar) or at the end.
+   * Scroll font in 4 directions.
+   * Capture from existing font.
+
+   * Popup-menu:
+      * Cut/copy/paste.
+      * Clear.
+      * Scroll char in 4 directions.
+      * Change width of a selected char (only for proportional font).
+      * Capture.
+
+
+
+---+ UNCLEAR
+
+   * FaceName: GUI for choosing between "override" and "use the same".
+
+   * Approach for multi-lingual GUI.
+
+   +* No special dialogs for complicated options (no hyperlinks thus): just edit them in "Advanced options" dialog,
+     but in case they are set to advanced mode, render them specially.
+      * Maybe just disable the option in case it is set in advanced mode.
+      * "Advanced" hyperlink may be changed to a button or something.
+         * Maybe move "Advanced" to "Font" menu, but in this case its unclear how to indicate its state.
+
+   * Decide whether and how to show the char in the clipboard.
+      * Maybe "View -> Clipboard".
+      * Maybe store as a bitmap in the clipboard, thus allow to paste from other locations.
+      * Decide what to do if the paste size does not fit.
+
+   * Move "Chars -> Insert" and "Chars -> Delete" with FirstChar option to advanced.

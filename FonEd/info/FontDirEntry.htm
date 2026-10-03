@@ -1,0 +1,549 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<!-- saved from url=(0069)http://www.piclist.com/techref/os/win/api/win32/struc/src/str08_9.htm -->
+<HTML><HEAD><TITLE>FontDirEntry</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1251">
+<META content="MSHTML 6.00.2800.1528" name=GENERATOR></HEAD>
+<BODY onload="javascript:et=new Date();eol();">
+<SCRIPT type=text/javascript><!--
+var st=new Date();					
+var et=new Date();					
+var avgBndWdth=0;						
+function eol() {						
+var s=6998;					
+var i=document.images;				
+ for (var j=0;j<i.length;j++) 		
+  { s += parseInt(i[j].fileSize); };	
+ avgBndWdth = s/((et-st)||1);				
+ s= ' '+parseInt(s/1024)+'KB'; 		
+ i=' ('+(document.images.length-1)+' imgs) in '+((et-st)||1)/1000+'s is ';	
+ if (document.getElementById) 		
+  {document.getElementById('lt').innerText=s+i+parseInt(avgBndWdth)+'KBps';}
+ else {document.info.lt.value=i;}		
+ };						
+//--></SCRIPT>
+<A onclick="return false;" 
+href="http://www.piclist.com/techref/indexok.asp?38805.0513194444"><IMG height=1 
+alt="please dont rip this site" src="FontDirEntry.files/null.gif" width=1 
+align=left border=0></A> <A 
+href="http://www.piclist.com/techref/os/win/api/win32/struc/src/str08_8.htm">Prev</A><A 
+href="http://www.piclist.com/techref/os/win/api/win32/struc/src/str08_10.htm"> 
+Next</A> 
+<H1><A name=_win32_FontDirEntry_str></A>FontDirEntry <A 
+href="http://www.piclist.com/techref/os/win/api/win32/sys/src/resource.htm">Overview</A>&nbsp; 
+<A 
+href="http://www.piclist.com/techref/os/win/api/win32/sys/src/resource_11.htm">Group</A></H1>
+<P>The <B>FontDirEntry </B>structure contains information about an individual 
+font in a font resource group. <PRE><FONT face=Courier size=2>struct FontDirEntry { 
+
+&nbsp; &nbsp; WORD dfVersion; 
+
+&nbsp; &nbsp; DWORD dfSize; 
+
+&nbsp; &nbsp; char dfCopyright[60]; 
+
+&nbsp; &nbsp; WORD dfType; 
+
+&nbsp; &nbsp; WORD dfPoints; 
+
+&nbsp; &nbsp; WORD dfVertRes; 
+
+&nbsp; &nbsp; WORD dfHorizRes; 
+
+&nbsp; &nbsp; WORD dfAscent; 
+
+&nbsp; &nbsp; WORD dfInternalLeading; 
+
+&nbsp; &nbsp; WORD dfExternalLeading; 
+
+&nbsp; &nbsp; BYTE dfItalic; 
+
+&nbsp; &nbsp; BYTE dfUnderline; 
+
+&nbsp; &nbsp; BYTE dfStrikeOut; 
+
+&nbsp; &nbsp; WORD dfWeight; 
+
+&nbsp; &nbsp; BYTE dfCharSet; 
+
+&nbsp; &nbsp; WORD dfPixWidth; 
+
+&nbsp; &nbsp; WORD dfPixHeight; 
+
+&nbsp; &nbsp; BYTE dfPitchAndFamily; 
+
+&nbsp; &nbsp; WORD dfAvgWidth; 
+
+&nbsp; &nbsp; WORD dfMaxWidth; 
+
+&nbsp; &nbsp; BYTE dfFirstChar; 
+
+&nbsp; &nbsp; BYTE dfLastChar; 
+
+&nbsp; &nbsp; BYTE dfDefaultChar; 
+
+&nbsp; &nbsp; BYTE dfBreakChar; 
+
+&nbsp; &nbsp; WORD dfWidthBytes; 
+
+&nbsp; &nbsp; DWORD <B style="COLOR: black; BACKGROUND-COLOR: #ffff66">dfDevice</B>; 
+
+&nbsp; &nbsp; DWORD dfFace; 
+
+&nbsp; &nbsp; DWORD dfReserved; 
+
+&nbsp; &nbsp; char szDeviceName[]; 
+
+&nbsp; &nbsp; char szFaceName[]; 
+
+}; 
+
+&nbsp;</FONT></PRE>
+<H2>Members </H2>
+<DL>
+  <DT><B>dfVersion </B>
+  <DD>Specifies a user-defined version number for the resource data that tools 
+  can use to read and write resource files. <BR>
+  <DT><B>dfSize </B>
+  <DD>Specifies the size of the file, in bytes. <BR>
+  <DT><B>dfCopyright[60] </B>
+  <DD>Contains a 60-character string with the font supplier's copyright 
+  information. <BR>
+  <DT><B>dfType </B>
+  <DD>Specifies the type of font file. <BR>
+  <DT><B>dfPoints </B>
+  <DD>Specifies the point size at which this character set looks best. <BR>
+  <DT><B>dfVertRes </B>
+  <DD>Specifies the vertical resolution, in dots per inch, at which this 
+  character set was digitized. <BR>
+  <DT><B>dfHorizRes </B>
+  <DD>Specifies the horizontal resolution, in dots per inch, at which this 
+  character set was digitized. <BR>
+  <DT><B>dfAscent </B>
+  <DD>Specifies the distance from the top of a character definition cell to the 
+  baseline of the typographical font. <BR>
+  <DT><B>dfInternalLeading </B>
+  <DD>Specifies the amount of leading inside the bounds set by the 
+  <B>dfPixHeight</B> member. Accent marks and other diacritical characters can 
+  occur in this area. <BR>
+  <DT><B>dfExternalLeading </B>
+  <DD>Specifies the amount of extra leading that the application adds between 
+  rows. <BR>
+  <DT><B>dfItalic </B>
+  <DD>Specifies an italic font if not equal to zero. <BR>
+  <DT><B>dfUnderline </B>
+  <DD>Specifies an underlined font if not equal to zero. <BR>
+  <DT><B>dfStrikeOut </B>
+  <DD>Specifies a strikeout font if not equal to zero. <BR>
+  <DT><B>dfWeight </B>
+  <DD>Specifies the weight of the font in the range 0 through 1000. For example, 
+  400 is roman and 700 is bold. If this value is zero, a default weight is used. 
+  For additional defined values, see the description of the <B>LOGFONT 
+  </B>structure. <BR>
+  <DT><B>dfCharSet </B>
+  <DD>Specifies the character set of the font. For predefined values, see the 
+  description of the <B>LOGFONT </B>structure. <BR>
+  <DT><B>dfPixWidth </B>
+  <DD>Specifies the width of the grid on which a vector font was digitized. For 
+  raster fonts, if the member is not equal to zero, it represents the width for 
+  all the characters in the bitmap. If the member is equal to zero, the font has 
+  variable-width characters. <BR>
+  <DT><B>dfPixHeight </B>
+  <DD>Specifies the height of the character bitmap for raster fonts or the 
+  height of the grid on which a vector font was digitized. <BR>
+  <DT><B>dfPitchAndFamily </B>
+  <DD>Specifies the pitch and the family of the font. For additional 
+  information, see the description of the <B><A 
+  href="http://www.piclist.com/techref/os/win/api/win32/struc/src/str10_7.htm">LOGFONT</A></B> 
+  structure. <BR>
+  <DT><B>dfAvgWidth </B>
+  <DD>Specifies the average width of characters in the font (generally defined 
+  as the width of the letter <I>x</I>). This value does not include the overhang 
+  required for bold or italic characters. <BR>
+  <DT><B>dfMaxWidth </B>
+  <DD>Specifies the width of the widest character in the font. <BR>
+  <DT><B>dfFirstChar </B>
+  <DD>Specifies the first character code defined in the font. <BR>
+  <DT><B>dfLastChar </B>
+  <DD>Specifies the last character code defined in the font. <BR>
+  <DT><B>dfDefaultChar </B>
+  <DD>Specifies the character to substitute for characters not in the font. <BR>
+  <DT><B>dfBreakChar </B>
+  <DD>Specifies the character that will be used to define word breaks for text 
+  justification. <BR>
+  <DT><B>dfWidthBytes </B>
+  <DD>Specifies the number of bytes in each row of the bitmap. This value is 
+  always even so that the rows start on word boundaries. For vector fonts, this 
+  member has no meaning. <BR>
+  <DT><B><B style="COLOR: black; BACKGROUND-COLOR: #ffff66">dfDevice</B> </B>
+  <DD>Specifies the offset in the file to a null-terminated string that 
+  specifies a device name. For a generic font, this value is zero. <BR>
+  <DT><B>dfFace </B>
+  <DD>Specifies the offset in the file to a null-terminated string that names 
+  the typeface. <BR>
+  <DT><B>dfReserved </B>
+  <DD>This member is reserved. <BR>
+  <DT><B>szDeviceName</B> 
+  <DD>Array that contains a null-terminated string that specifies the name of 
+  the device if this font file is designated for a specific device. <BR>
+  <DT><B>szFaceName</B> 
+  <DD>Array that contains a null-terminated string that specifies the typeface 
+  name of the font. </DD></DL>
+<H2>Remarks</H2>
+<P>There is one <B>FontDirEntry </B>structure for every font in the .RES file. 
+Applications that generate .RES files with font resources must also add to the 
+file a <B>FontDirEntry </B>structure for each font. 
+<P>Font declarations can be mixed with other resource declarations in the .RC 
+file because fonts do not need to be contiguous in the .RES file. 
+<H2>See Also</H2>
+<P><B><A 
+href="http://www.piclist.com/techref/os/win/api/win32/struc/src/str03_26.htm">DirEntry</A></B>, 
+<B><A 
+href="http://www.piclist.com/techref/os/win/api/win32/struc/src/str08_10.htm">FontGroupHdr</A></B>,<B> 
+<A 
+href="http://www.piclist.com/techref/os/win/api/win32/struc/src/str10_7.htm">LOGFONT</A>&nbsp;</B> 
+
+<HR>
+
+<TABLE>
+  <FORM name=info action=/techref/postsearch.asp method=post>
+  <TBODY>
+  <TR>
+    <TD><SMALL>file: /techref/os/win/api/win32/struc/src/str08_9.htm, <SPAN 
+      id=lt NAME="lt">6KB, <INPUT size=30 name=lt></SPAN>, updated: 2000/4/7 
+      11:20, local time: 2006/3/29 01:13,
+      <SCRIPT type=text/javascript><!--
+ eol();
+ for (var j=0;j<document.images.length;j++) 		
+  { document.images[j].onload = new Function('eol();'); };	
+//-->
+</SCRIPT>
+       </SMALL>
+      <DIV id=upperright 
+      onmouseover="this.style.backgroundColor='#FFFF00';this.style.borderStyle='outset';" 
+      style="BORDER-TOP-WIDTH: 2px; BORDER-LEFT-WIDTH: 2px; RIGHT: 0px; FILTER: progid:DXImageTransform.Microsoft.Alpha(opacity=75); BORDER-BOTTOM-WIDTH: 2px; COLOR: gray; POSITION: absolute; TOP: 0px; BACKGROUND-COLOR: #ffffff; TEXT-ALIGN: right; BORDER-RIGHT-WIDTH: 2px" 
+      onmouseout="this.style.backgroundColor='#FFFFFF';this.style.borderStyle='ridge';" 
+      NAME="upperright"><SMALL><SUP><A title="Go to the top page" 
+      style="COLOR: #af4040; TEXT-DECORATION: none" 
+      href="http://www.piclist.com/techref/index.htm">TOP</A> <A 
+      title="Monthly Change Log for this folder" 
+      style="COLOR: #af4040; TEXT-DECORATION: none" 
+      href="http://www.piclist.com/techref/os/win/api/win32/struc/src/new200603.txt">NEW</A>
+      <SCRIPT>
+<!--- Hide script from old browsers.
+document.write('<A style="color:#AF4040;text-decoration:none;" TITLE="More pages like this." HREF="/techref/postsearch.asp\077from=%2Ftechref%2Fos%2Fwin%2Fapi%2Fwin32%2Fstruc%2Fsrc%2Fstr08%5F9%2Ehtm">MORE</A> ')
+// End the hiding here. -->
+</SCRIPT>
+       <A 
+      title="I'm willing to pay for help, please refer me to a qualified consultant" 
+      style="COLOR: #af4040; TEXT-DECORATION: none" 
+      href="mailto:webmaster@piclist.com?subject=I need someone to help me with: dfDevice">HELP</A> 
+      <A title="Advanced search" style="COLOR: #af4040; TEXT-DECORATION: none" 
+      href="http://www.piclist.com/techref/postsearch.asp">FIND:</A>&nbsp;<BR><INPUT 
+      id=search title="Free text search" 
+      style="BORDER-RIGHT: #af0000 1px solid; PADDING-RIGHT: 0px; BORDER-TOP: #af0000 1px solid; PADDING-LEFT: 0px; FONT-SIZE: small; PADDING-BOTTOM: 0px; BORDER-LEFT: #af0000 1px solid; PADDING-TOP: 0px; BORDER-BOTTOM: #af0000 1px solid; BACKGROUND-COLOR: transparent" 
+      onclick="this.value='';" maxLength=100 value=Search name=SearchString> 
+      <INPUT type=hidden value=ON name=FreeText> <INPUT type=hidden 
+      value=/techref/os/win/api/win32/struc/src/str08_9.htm name=from> 
+      </SUP></SMALL></DIV>
+      <DIV id=upperleft 
+      onmouseover="this.style.backgroundColor='#FFFF00';this.style.borderStyle='outset';" 
+      style="FILTER: progid:DXImageTransform.Microsoft.Alpha(opacity=75); LEFT: 0px; COLOR: gray; POSITION: absolute; TOP: 0px" 
+      onmouseout="this.style.backgroundColor='transparent';this.style.borderStyle='none';" 
+      NAME="upperleft"><SMALL><A 
+      href="http://www.piclist.com/techref/indexok.asp?top"></A><SUP>81.195.15.180:<A 
+      style="COLOR: #af4040" 
+      href="http://www.piclist.com/techref/login/default.asp?req=403%3Bhttp%3A%2F%2Fwww%2Epiclist%2Ecom%2Ftechref%2Fos%2Fwin%2Fapi%2Fwin32%2Fstruc%2Fsrc%2Fstr08%5F9%2Ehtm">LOG 
+      IN</A></SUP></SMALL></DIV>
+      <DIV style="LEFT: 25%; WIDTH: 25%; POSITION: absolute; TOP: 0px" 
+      align=center><SMALL><SUP><FONT color=#ff0000><B><A 
+      title="Why does RIP/GRAB/SPIDERing lead to ads and sponsors? Click here." 
+      style="COLOR: red" 
+      href="http://www.piclist.com/dontripthissite.htm">PLEASE DON'T 
+      RIP!</A></B></FONT><FONT color=#008000><B> <A 
+      title="Click to copy link HTML to your clipboard" 
+      onclick="window.clipboardData.setData('Text','<A HREF=&quot;http://www.piclist.com/techref/os/win/api/win32/struc/src/str08_9.htm&quot;>FontDirEntry</A>');">DO&nbsp;LINK</A></B></FONT></SMALL></SUP> 
+      </SMALL></DIV>
+      <SCRIPT language=JavaScript type=text/javascript>
+<!--- Hide script from old browsers.
+var old = 1;
+var to;
+
+function scrollHold() {
+var pos=1;
+	if (to) clearTimeout(to);
+	if (window.innerHeight) {
+		pos = window.pageYOffset;
+		}
+	else if (document.documentElement && document.documentElement.scrollTop) {
+		pos = document.documentElement.scrollTop;
+		}
+	else if (document.body) {
+		pos = document.body.scrollTop;
+		}
+	if (pos < 0) pos = 1;
+	else pos += 1;
+	if (pos != old) {
+		upperright.style.top = pos;
+		upperleft.style.top = pos;
+		}
+	old = pos;
+	if (window.onscroll==null) {to=setInterval('scrollHold()',100);}
+}
+
+window.onscroll = scrollHold;
+scrollHold();
+
+// End the hiding here. -->
+</SCRIPT>
+    </TD></TD></FORM></TR></TBODY></TABLE>
+<HR>
+
+<DIV>
+<TABLE width="30%" align=right bgColor=#f0f0f0>
+  <TBODY>
+  <TR>
+    <TD>&nbsp;</TD>
+    <TD><SMALL>These pages are served without commercial sponsorship. (No 
+      popup ads, etc...).Bandwidth abuse increases hosting cost forcing 
+      sponsorship or shutdown. This server aggressively defends against 
+      automated copying for any reason including offline viewing, duplication, 
+      etc... Please respect this requirement and <FONT face="Comic Sans MS" 
+      color=#ff0000>DO NOT RIP THIS SITE</FONT>.<A 
+      href="http://www.piclist.com/dontripthissite.htm">Questions?</A>
+      <P>Please <I>DO</I> link to this page!<BR><TT>&lt;A 
+      HREF="http://www.piclist.com<BR>/techref/os/win/api/win32/struc/src/str08_9.htm"&gt;FontDirEntry&lt;/A&gt;</TT></SMALL></P></TD></TR></TBODY></TABLE>Did 
+you find what you needed? From: "<I><A 
+href="http://www.google.ru/search?sourceid=navclient&amp;hl=ru&amp;ie=UTF-8&amp;rls=GGLG,GGLG:2006-11,GGLG:ru&amp;q=dfDevice">http://www.google.ru/search?sourceid=navclient&amp;hl=ru&amp;ie=UTF-8&amp;rls=GGLG,GGLG:2006-11,GGLG:ru&amp;q=dfDevice</A></I>" 
+"<I><B>dfDevice</B></I>" 
+<UL>
+  <SCRIPT>
+<!--- Hide script from old browsers.
+document.write('<LI><I>&quot;Not quite. <A HREF="/techref/postsearch.asp\077from=%2Ftechref%2Fos%2Fwin%2Fapi%2Fwin32%2Fstruc%2Fsrc%2Fstr08%5F9%2Ehtm"> Look for more pages like this one.&quot;</A></I> ')
+// End the hiding here. -->
+</SCRIPT>
+
+  <LI>
+  <FORM action=/techref/postsearch.asp#result method=post><I>"No. I'm looking 
+  for: <INPUT maxLength=100 size=40 value=dfDevice name=SearchString> <INPUT 
+  type=hidden value=on name=FreeText> <INPUT type=hidden 
+  value=/techref/os/win/api/win32/struc/src/str08_9.htm name=from> <INPUT type=submit value=Fetch name=Action>"</I></FORM>
+  <LI><A href="http://www.piclist.com/techref/postsearch.asp"><I>"No. Take me to 
+  the search page."</I></A> 
+  <LI><A href="http://www.piclist.com/techref/index.htm"><I>"No. Take me to the 
+  top so I can drill down by catagory"</I></A> 
+  <LI><A 
+  href="mailto:webmaster@piclist.com?subject=I need someone to help me with: dfDevice"><I>"No. 
+  I'm willing to pay for help, please refer me to a qualified 
+  consultant"</I></A> 
+  <LI>
+  <FORM action=/techref/update.asp method=post><INPUT type=hidden 
+  value=Interested: name=action> <INPUT type=hidden value=on name=private> 
+  <INPUT type=hidden value=81.195.15.180 name=id> <INPUT type=hidden 
+  value=/techref/os/win/api/win32/struc/src/str08_9.htm name=url> <I>"No. But 
+  I'm interested. <INPUT type=submit value=Email> me at <INPUT name=email> when 
+  this page is expanded."</I></FORM></LI></UL></DIV>
+<HR>
+<A name=form></A>
+<FORM action=/techref/update.asp method=post><INPUT type=hidden value=on 
+name=private> <INPUT type=hidden value=81.195.15.180 name=id> <INPUT type=hidden 
+value=/techref/os/win/api/win32/struc/src/str08_9.htm name=url> After you find 
+an appropriate page, you are invited to <INPUT type=submit value=Post> your 
+<SELECT size=4 name=action> <OPTION value=Questions: 
+  selected>question</OPTION> <OPTION value=Comments:>comment</OPTION> <OPTION 
+  value="See also:">link</OPTION> <OPTION value=Code:>program 
+listing</OPTION></SELECT> to this <A 
+href="http://www.piclist.com/idea/websites.htm"><I>massmind</I></A> site! 
+<SMALL>(posts will be reviewed)</SMALL> Just type in the box and press the Post 
+button. (<A 
+href="http://www.piclist.com/techref/language/html/index.htm">HTML</A> 
+welcomed!): <A 
+href="http://www.piclist.com/techref/idea/website/codetutorial.htm">A tutorial 
+is available</A> <A 
+href="http://www.piclist.com/techref/private.asp?req=membership">Members</A> can 
+<A 
+href="http://www.piclist.com/techref/login/default.asp?req=403%3Bhttp%3A%2F%2Fwww%2Epiclist%2Ecom%2Ftechref%2Fos%2Fwin%2Fapi%2Fwin32%2Fstruc%2Fsrc%2Fstr08%5F9%2Ehtm%23form">login</A> 
+to post directly, become page editors, and be credited for their posts. <BR>
+<SCRIPT>
+<!--- Hide script from old browsers.
+
+function doStartEnd(anArea, startTxt, endTxt ) {
+	if (document.selection) {
+		anArea.focus();
+		var aSel = ( anArea.caretPos ? anArea.caretPos : document.selection.createRange() );
+		if (aSel.text.charAt(aSel.text.length-1)==' ') aSel.moveEnd('character',-1);
+		if (aSel.text=='') { 
+			aSel.moveStart('character',-100000);
+			if (aSel.text.lastIndexOf(startTxt) > aSel.text.lastIndexOf(endTxt)) startTxt=''; else endTxt='';
+			aSel.collapse(false);
+			}
+		aSel.text = startTxt + aSel.text + endTxt;
+//		aSel.move("character",-4);	aSel.select();
+		}
+	else if (typeof(textarea.selectionStart) != "undefined") {
+		// Mozilla text range replace.
+		var text = new Array();
+		text[0] = anArea.value.substr(0, anArea.selectionStart);
+		text[1] = anArea.value.substr(anArea.selectionStart, anArea.selectionEnd - anArea.selectionStart);
+		text[2] = anArea.value.substr(anArea.selectionEnd);
+		if (text[1]=='') { if (text[0].lastIndexOf(startTxt) > text[0].lastIndexOf(endTxt)) startTxt=''; else endTxt=''; }
+		var caretPos = anArea.selectionEnd + startTxt.length + endTxt.length;
+		anArea.value = text[0] + startTxt + text[1] + endTxt + text[2];
+		if (anArea.setSelectionRange) {
+			anArea.focus();
+			anArea.setSelectionRange(caretPos, caretPos);
+			}
+		}
+	else {
+		anArea.value += startTxt + aSel.text + endTxt;
+		}
+	}
+
+function doTag(anArea,aTag) { doStartEnd(anArea,'<'+aTag+'>','</'+aTag+'>'); }
+function doTagAttrib(anArea,aTag,anAttrib,aValue) {
+	doStartEnd(anArea,'<'+aTag+' '+anAttrib+'=\"'+aValue+'\">','</'+aTag+'>');
+	}
+function doLink(anArea) { doTagAttrib(anArea,'a','href',prompt('Enter url','http://www.'));}
+function storeCaret(anArea) {
+	if (anArea.createTextRange) anArea.caretPos = document.selection.createRange().duplicate();
+	}
+function doKey(anArea) {
+	if (event) {
+		window.status=event.keyCode+' '+event.ctrlKey+' '+event.shiftKey;
+		if (event.ctrlKey) { 
+			if (event.keyCode==73 || event.keyCode==66 || event.keyCode==85) { 	// b, i, or u
+				doTag(anArea,String.fromCharCode(event.keyCode)); event.returnValue=false; 
+				}
+			if (event.keyCode==76) { doLink(anArea); event.returnValue=false;}
+			}
+		}
+	return true;
+	}
+	
+document.write('<A TITLE=\'Bold Ctrl+B\' onClick="javascript:doTag(text,\'b\');"><B>B</B></A> ')
+document.write('<A TITLE=\'Italic Ctrl+I\' onClick="javascript:doTag(text,\'i\');"><i>I</i></A> &nbsp;')
+document.write('<A TITLE=\'Underline Ctrl+U\' onClick="javascript:doTag(text,\'u\');"><u>u</u></A> &nbsp;')
+document.write('<A TITLE=\'Blockquote\' onClick="javascript:doTag(text,\'blockquote\');">&quot;&quot;</A> ')
+document.write('&nbsp; <A TITLE=\'Link Ctrl+L\' onClick="javascript:doLink(text);">&infin;</A> ')
+// End the hiding here. -->
+</SCRIPT>
+<BR><TEXTAREA onkeydown=doKey(this); onkeyup=storeCaret(this); onclick=storeCaret(this); name=text rows=4 cols=65 onchange=storeCaret(this); onselect=storeCaret(this);></TEXTAREA> 
+<SMALL><BR>Link?&nbsp;Put&nbsp;it&nbsp;here:&nbsp;<INPUT size=60 name=file> 
+<BR>if&nbsp;you&nbsp;want&nbsp;a&nbsp;response, 
+please&nbsp;enter&nbsp;your&nbsp;email&nbsp;address:&nbsp;<INPUT size=40 
+name=email> </SMALL></FORM>
+<HR>
+
+<TABLE width="30%" align=left bgColor=#f0f0f0>
+  <TBODY>
+  <TR>
+    <TD>&nbsp;</TD>
+    <TD><!-- piclist.com --><!-- FontDirEntry --><!-- FontDirEntry --><FONT 
+      size=-3>
+      <SCRIPT language=javaScript>
+<!-- Begin -
+
+var x,y,r,s,box
+
+function openbox(thisbox) {
+	if(document.all) {
+		s=thisbox.split(" ")[0]
+		thisbox=thisbox.split(" ")[1]
+		r=thisbox.split(".");
+//		window.status='x'+x+'y'+y+"l"+r.length
+		thisbox='';
+		for (i=r.length-1;i>=0;i--) {
+			thisbox+='/'+r[i];
+//			window.status += '/'+r[i]
+			};
+		box = window.event.toElement;
+		x=box.offsetLeft;
+		y=box.offsetTop;
+		box = document.all.popupbox.style;
+		box.visibility="HIDDEN";
+//		box.position="relative";
+//		box.pixelLeft=x;
+//		box.pixelTop=y+20;
+		popupbox.innerHTML="<img height=48 width=48 src='http://www.piclist.com/images/picons/domains/"+thisbox+"/"+s+"/unknown/face.gif' onload=\"box.visibility='visible';\">";
+//		window.status='x'+x+'y'+y+r.length
+		}
+	}
+
+function closebox() {
+	if (box) { box.visibility="HIDDEN"; }
+	}
+
+// - End -->
+</SCRIPT>
+
+      <DIV id=popupbox style="FLOAT: right; POSITION: relative"><IMG height=48 
+      src="FontDirEntry.files/null.gif" width=48></DIV><B><A name=2006>PICList 
+      2006</A> <A href="http://www.piclist.com/support">contributors</A>:</B> 
+      <BR>o List host: <A 
+      href="http://www.piclist.com/techref/piclist/support.htm#LIST">MIT</A>, 
+      Site host <A 
+      href="http://techref.massmind.org/techref/piclist/support.htm#SITE">massmind.org</A>, 
+      Top posters @20060329 <A onmouseover="openbox('olin ')" title="362 posts!" 
+      onmouseout=closebox()>olin piclist,</A> <A 
+      onmouseover="openbox('lists connectionbrazil.com ')" title="302 posts!" 
+      onmouseout=closebox()>Gerhard Fiedler,</A> <A 
+      onmouseover="openbox('plp actcom.co.il ')" title="280 posts!" 
+      onmouseout=closebox()>Peter,</A> <A 
+      onmouseover="openbox('joecolquitt clear.net.nz ')" title="275 posts!" 
+      onmouseout=closebox()>Jinx,</A> <A 
+      onmouseover="openbox('wouter voti.nl ')" title="270 posts!" 
+      onmouseout=closebox()>Wouter van Ooijen,</A> <A 
+      onmouseover="openbox('apptech paradise.net.nz ')" title="247 posts!" 
+      onmouseout=closebox()>Russell McMahon,</A> <A 
+      onmouseover="openbox('A.B.Pearce rl.ac.uk ')" title="241 posts!" 
+      onmouseout=closebox()>Alan B. Pearce,</A> <A 
+      onmouseover="openbox('westfw mac.com ')" title="237 posts!" 
+      onmouseout=closebox()>William Chops Westfield,</A> <A 
+      onmouseover="openbox('dvanhorn microbrix.com ')" title="192 posts!" 
+      onmouseout=closebox()>David VanHorn,</A> <A onmouseover="openbox('bean ')" 
+      title="173 posts!" onmouseout=closebox()>bean,</A> <BR>* Page Editors: 
+      James Newton, <A onmouseover="openbox('d.cary+2004 ieee.org')" 
+      onmouseout=closebox() name=dcary>David Cary</A>, and <A 
+      href="http://www.piclist.com/techref/idea/website/pageedit.htm"><I>YOU</I></A>! 
+      <BR>* Roman Black of <A href="http://www.blackrobotics.com/">Black 
+      Robotics</A> donates from sales of <A 
+      href="http://www.piclist.com/techref/io/stepper/linistep/index.htm">Linistep 
+      stepper controller kits</A>. <BR>* Ashley Roll of <A 
+      href="http://www.digitalnemesis.com/">Digital Nemesis</A> donates from 
+      sales of <A href="http://www.piclist.com/techref/io/serial/RCL1.htm">RCL-1 
+      RS232 to TTL converters</A>. <BR>* Monthly <A 
+      title="Send a small amount each month" 
+      href="http://www.piclist.com/techref/piclist/support.htm#subscribe">Subscribe</A>rs: 
+      <A title=$5/mo 
+      href="http://www.shultzie.com/">Shultz&nbsp;Electronics</A>, <A 
+      title=$7/mo>Larry&nbsp;Williams</A>, <A title=$5/mo>Aaron&nbsp;Garber</A>, 
+      <A title=$5/mo href="http://www.dvanhorn.org/">David&nbsp;VanHorn</A>, <A 
+      title=$5/mo>Bryan&nbsp;Whitehouse</A>, <A 
+      onmouseover="openbox('tjweber lightlink.com')" title=$5/mo 
+      onmouseout=closebox() 
+      href="http://www.timothyweber.org/">Timothy&nbsp;Weber</A>, <A 
+      onmouseover="openbox('dchallis cox.net')" title=$5/mo 
+      onmouseout=closebox()>David&nbsp;Challis</A>. <I>on-going support is MOST 
+      appreciated!</I> <BR>* <A title="Donate to support our site" 
+      href="http://www.piclist.com/techref/piclist/support.htm#contribute">Contributors</A>: 
+      <A onmouseover="openbox('d.cary+2004 ieee.org')" title=$50 
+      onmouseout=closebox()>David Cary</A>, <A title=$30>Elemer AM Nyiry</A>, <A 
+      title=$25>Philip J Taylor</A>, <A 
+      onmouseover="openbox('gsc omegadogs.com')" title=$20 onmouseout=closebox() 
+      href="http://www.omegadogs.com/">Gus Calabrese of Omegadogs.com</A>, <A 
+      title=$20>Gautama Venegas</A>, <A title="2 64M memory DIMMs">Patrick B. 
+      Murphy</A>, <A onmouseover="openbox('westfw mac.com')" 
+      title="1 256M and 3 128M memory DIMMs" onmouseout=closebox()>William Chops 
+      Westfield</A>, <A title=$10>Peter Todd</A> </FONT></TD></TR></TBODY></TABLE>
+<TABLE width="30%" align=right bgColor=#f0f0f0>
+  <TBODY>
+  <TR>
+    <TD>&nbsp;</TD>
+    <TD>
+      <CENTER><BIG><B>Quick, <U>Easy</U> <I>and</I> <FONT face="Comic Sans MS" 
+      color=#408040>CHEAP</FONT>! <A 
+      href="http://www.piclist.com/techref/io/serial/RCL1.htm" target=_top>RCL-1 
+      RS232 Level Converter in a DB9 backshell</A></B></BIG> <BR>Ashley Roll has 
+      put together a really nice little unit here. Leave off the MAX232 and keep 
+      these handy for the few times you need true RS232! 
+</CENTER></TD></TR></TBODY></TABLE>
+<P clear=all></P></BODY></HTML>
