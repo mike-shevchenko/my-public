@@ -1,0 +1,10 @@
+# Delphi compiled units and IDE-local state
+*.dcu
+*.dsk
+*.identcache
+*.local
+*.~*
+__history/
+
+# Windows Explorer thumbnail cache
+Thumbs.db
