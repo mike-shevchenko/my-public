@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE TEST PUBLIC "-//pub" "SystemID">
+
+<!-- Comment -->
+
+<Root>
+  <E1 att1='v&apos;al1&#2;X' att2="v&amp;al&quot;2" att3="¢€"/>
+  <E2/>
+</Root>

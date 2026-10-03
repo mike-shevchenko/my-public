@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="Windows-1251"?>
+
+<XOM version="1.0" description="X test Object Model">
+
+  <Obj2 Str="Str2" WStr="WStr2" List="S2_1 S2_2" Enum="E1">
+    <Obj Str="Inner 2" EnumSet="E0 E2" Color="Black"/>
+    <Obj Str="Inner 2 _ 1" Color="Black">
+      <Obj Str="Inner 2 _ 2" Color="Black"/>
+    </Obj>
+  </Obj2>
+
+</XOM>

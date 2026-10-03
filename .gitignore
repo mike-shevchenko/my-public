@@ -8,3 +8,6 @@ __history/
 
 # Windows Explorer thumbnail cache
 Thumbs.db
+
+# Visual SourceSafe status files
+vssver.scc

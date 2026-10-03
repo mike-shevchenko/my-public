@@ -1,0 +1,13 @@
+:BASE regexpru.hlp
+:TITLE Регулярные выражения для Delphi
+1 Назначение=tregexpr_about@regexpru.hlp
+1 Лицензия=tregexpr_disclaimer@regexpru.hlp
+1 Что нового=tregexpr_whats_new@regexpru.hlp
+1 Установка, список файлов=tregexpr_installation@regexpru.hlp
+1 Примеры использования=tregexpr_how_it_works@regexpru.hlp
+1 Синтаксис регулярных выражений=tregexpr_syntax@regexpru.hlp
+1 Интерфейс=tregexpr_interface@regexpru.hlp
+1 Демо-программа=tregexpr_testrexp@regexpru.hlp
+1 Пример - оформление гипер-ссылок=tregexpr_decorator@regexpru.hlp
+1 ЧАВО=tregexpr_faq@regexpru.hlp
+1 Автор=tregexpr_author@regexpru.hlp

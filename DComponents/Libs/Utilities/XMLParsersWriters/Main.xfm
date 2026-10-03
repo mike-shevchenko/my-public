@@ -1,0 +1,66 @@
+object MainForm: TMainForm
+  Left = 328
+  Top = 190
+  Width = 408
+  Height = 234
+  VertScrollBar.Range = 35
+  HorzScrollBar.Range = 285
+  ActiveControl = DumpMemo
+  Caption = 'XMLParsers Test'
+  Color = clBackground
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  PixelsPerInch = 120
+  TextHeight = 16
+  TextWidth = 7
+  object DumpMemo: TMemo
+    Left = 0
+    Top = 44
+    Width = 408
+    Height = 190
+    Cursor = crIBeam
+    Anchors = [akLeft, akTop, akRight, akBottom]
+    Color = 10485760
+    Font.CharSet = fcsUnicode
+    Font.Color = 14745599
+    Font.Height = 17
+    Font.Name = 'Andale Mono'
+    Font.Pitch = fpVariable
+    Font.Style = []
+    Font.Weight = 40
+    ParentFont = False
+    ReadOnly = True
+    ScrollBars = ssAutoBoth
+    TabOrder = 0
+    WantReturns = False
+    WordWrap = False
+  end
+  object StartParsingButton: TButton
+    Left = 8
+    Top = 10
+    Width = 85
+    Height = 25
+    Caption = 'StartParsing'
+    TabOrder = 1
+    OnClick = StartParsingButtonClick
+  end
+  object StopParsingButton: TButton
+    Left = 104
+    Top = 10
+    Width = 89
+    Height = 25
+    Caption = 'StopParsing'
+    TabOrder = 2
+    OnClick = StopParsingButtonClick
+  end
+  object WriteButton: TButton
+    Left = 200
+    Top = 10
+    Width = 85
+    Height = 25
+    Caption = 'Write'
+    Default = True
+    TabOrder = 3
+    OnClick = WriteButtonClick
+  end
+end

@@ -1,0 +1,39 @@
+  <!ELEMENT XOM  (Obj2) >
+  <!ATTLIST XOM
+    version     CDATA  "1.0"
+    description CDATA  "X test Object Model"
+  >
+
+  <!ENTITY % Boolean-        "(False | True)" >
+  <!ENTITY % Integer-        "CDATA"          >
+  <!ENTITY % AnsiString-     "CDATA #IMPLIED" >
+  <!ENTITY % WideString-     "CDATA #IMPLIED" >
+  <!ENTITY % NameList-       "NMTOKENS"       >
+  <!ENTITY % Color-          "CDATA"          >
+
+  <!ENTITY % Enum  "(E0 | E1 | E2)" >
+  <!ENTITY % EnumSet  "NMTOKENS">
+
+
+  <!ELEMENT Obj  (Obj?, Obj*, Obj*) >
+  <!ATTLIST Obj
+    Int           %Integer-;      "1"
+    Str           %AnsiString-;
+    WStr          %WideString-;
+    Bool          %Boolean-;      "True"
+    List          %NameList-;     #IMPLIED
+    Enum          %Enum;          "E0"
+    EnumSet       %EnumSet;       "E2"
+    Color         %Color-;        #REQUIRED
+  >
+
+  <!ELEMENT Obj2  (Obj?, Obj+) >
+  <!ATTLIST Obj2
+    Int           %Integer-;      "65535"
+    Str           %AnsiString-;
+    WStr          %WideString-;
+    Bool          %Boolean-;      "False"
+    List          %NameList-;     #IMPLIED
+    Enum          %Enum;          "E0"
+  >
+
